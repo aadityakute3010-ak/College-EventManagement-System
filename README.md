@@ -61,30 +61,29 @@ This project simulates a **real-world event automation system** with features li
 ---
 
 # 🧱 Project Architecture
-event-management-system/
-│
+## 📁 Project Structure
+
+## 🏗️ Project Architecture
+```text
+college-event-management/
 ├── src/
 │   ├── main/
 │   │   ├── java/com/eventapp/
-│   │   │
-│   │   │   ├── controller/          # REST APIs
-│   │   │   ├── service/             # Business logic
-│   │   │   ├── repository/          # JPA repositories
-│   │   │   ├── model/               # Entities (Student, Event, Registration)
-│   │   │   ├── dto/                 # Request/Response DTOs
-│   │   │   ├── exception/           # Custom exceptions + handler
-│   │   │   ├── config/              # Email, security configs
-│   │   │   ├── security/            # Spring Security Role Based JWT authentcation
+│   │   │   ├── controller/      # REST API Endpoints
+│   │   │   ├── service/         # Business Logic Layer
+│   │   │   ├── repository/      # JPA Data Access
+│   │   │   ├── model/           # Database Entities (Student, Event, etc.)
+│   │   │   ├── dto/             # Data Transfer Objects
+│   │   │   ├── security/        # JWT & Spring Security Config
+│   │   │   ├── config/          # Mail & General Configs
+│   │   │   ├── exception/       # Global Exception Handling
 │   │   │   └── EventManagementApplication.java
-│   │
-│   └── resources/
-│       ├── application.properties
-│
+│   │   └── resources/
+│   │       └── application.properties
 ├── postman/
 │   └── event-management.postman_collection.json
-│
-├── README.md
-└── pom.xml
+├── pom.xml
+└── README.md
 
 
 ### Layers Explained:
