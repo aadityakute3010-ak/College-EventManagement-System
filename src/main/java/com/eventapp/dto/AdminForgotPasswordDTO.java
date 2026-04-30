@@ -1,0 +1,16 @@
+package com.eventapp.dto;
+
+public class AdminForgotPasswordDTO {
+	private String emailId;
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	
+	
+}
+ 
