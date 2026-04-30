@@ -84,6 +84,7 @@ college-event-management/
 │   └── event-management.postman_collection.json
 ├── pom.xml
 └── README.md
+```
 
 
 ### Layers Explained:
