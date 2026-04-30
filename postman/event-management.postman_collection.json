@@ -1,0 +1,1118 @@
+{
+  "info": {
+    "_postman_id": "14c18b14-90b4-4612-9a90-530df72fff8e",
+    "name": "EventApp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36962543"
+  },
+  "item": [
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "addEvent",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc3NDU0MDc4LCJleHAiOjE3Nzc0NTc2Nzh9.i4T9h8fL_K7HxX0VyluuWULsmQZ62VGXhiF7pZl6cO8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventName\": \"Report Writing\",\r\n  \"eventDesc\": \"Write the Best Report\",\r\n  \"eventDate\": \"2026-05-15\",\r\n  \"registrationFees\": 100,\r\n  \"organizerName\": \"Vedant\",\r\n  \"maxParticipants\": 10,\r\n  \"category\" : \"ACADEMIC\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "allReg",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc3NDYxMzAxLCJleHAiOjE3Nzc0NjQ5MDF9.USxQa2EzuMSTf3-G7uGfVqfwHLeTY0MmXRIlSRTmevA",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/registrations/allReg",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "registrations",
+                "allReg"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllStudents",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc3NDYxMzAxLCJleHAiOjE3Nzc0NjQ5MDF9.USxQa2EzuMSTf3-G7uGfVqfwHLeTY0MmXRIlSRTmevA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2NDg5NDMxLCJleHAiOjE3NzY0OTMwMzF9.BpxSw0RK6L2lCaXQ7_9s-ccEPNRz_mIvJqsNlhmHsoQ",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/allStudents",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "students",
+                "allStudents"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "approve",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc3Mzc3NTE5LCJleHAiOjE3NzczODExMTl9.wdglyu1sjNFNrWtyt5E2M0HNkkt7qfz1LDzOLTr1Suo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"studentId\": 16,\r\n    \"eventId\" : 14\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/registrations/approve",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "registrations",
+                "approve"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getRegisteredStudents",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2NDAxMzA5LCJleHAiOjE3NzY0MDQ5MDl9.T0LbHs4htpvg-E3bvO73VBFxx3QkY3ZgCvbXGXWktlQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventName\": \"Treasure Hunt\",\r\n  \"eventDesc\": \"Group Treasure Hunt Competition\",\r\n  \"eventDate\": \"2026-05-14\",\r\n  \"organizerName\": \"Vedant\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/events/11/students",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events",
+                "11",
+                "students"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteEvent",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc3NDU0MDc4LCJleHAiOjE3Nzc0NTc2Nzh9.i4T9h8fL_K7HxX0VyluuWULsmQZ62VGXhiF7pZl6cO8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventName\": \"abcd\",\r\n  \"eventDesc\": \"abcd\",\r\n  \"eventDate\": \"2026-05-20\",\r\n  \"organizerName\": \"xyz\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/events/12",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events",
+                "12"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllEvents",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc3NDU0MDc4LCJleHAiOjE3Nzc0NTc2Nzh9.i4T9h8fL_K7HxX0VyluuWULsmQZ62VGXhiF7pZl6cO8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"student\": {\r\n    \"studentId\": 3\r\n  },\r\n  \"event\": {\r\n    \"eventId\": 3\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllAdmin",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2NDAxMzA5LCJleHAiOjE3NzY0MDQ5MDl9.T0LbHs4htpvg-E3bvO73VBFxx3QkY3ZgCvbXGXWktlQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventName\": \"Treasure Hunt\",\r\n  \"eventDesc\": \"Group Treasure Hunt Competition\",\r\n  \"eventDate\": \"2026-05-14\",\r\n  \"organizerName\": \"Vedant\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/admin/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "admin",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "addAdmin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhdGhhcnZhQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NjM1Nzg0MSwiZXhwIjoxNzc2MzYxNDQxfQ.iQDJwFDTQVLPTg4NMWHh3B9OoE8P1hcBP9i8Lwow8XE",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Aditya Admin\",\r\n  \"emailId\": \"aditya@gmail.com\",\r\n  \"password\": \"aditya1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/admin/addAdmin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "admin",
+                "addAdmin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAdminById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2NDAxMzA5LCJleHAiOjE3NzY0MDQ5MDl9.T0LbHs4htpvg-E3bvO73VBFxx3QkY3ZgCvbXGXWktlQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventName\": \"Treasure Hunt\",\r\n  \"eventDesc\": \"Group Treasure Hunt Competition\",\r\n  \"eventDate\": \"2026-05-14\",\r\n  \"organizerName\": \"Vedant\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/admin/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "admin",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getEventByID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2ODQyOTgxLCJleHAiOjE3NzY4NDY1ODF9.xSAVn3oJXJbNnZelI4gdyfNsBqyXtpuVNm3_McL7VQI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"student\": {\r\n    \"studentId\": 3\r\n  },\r\n  \"event\": {\r\n    \"eventId\": 3\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/events/17",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events",
+                "17"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "pendingRegs",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2NDA2NjE1LCJleHAiOjE3NzY0MTAyMTV9.u_YbfVqL8kQEQjJLx8oRBhAlVVz0hHKRJTZtnPwUCYo",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/registrations/pending/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "registrations",
+                "pending",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getApproved",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2ODQwNDQwLCJleHAiOjE3NzY4NDQwNDB9.OFRzB1nrF6ohvy7Dx3ym31VNRUt5FsUDZ4wMVvvIIqs",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/registrations/approved/16",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "registrations",
+                "approved",
+                "16"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getStudentById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2ODQ5MjM4LCJleHAiOjE3NzY4NTI4Mzh9.Ki_I1xkJU7qLcxr42skkhv2FBYc3Oq-l3RVIpj1SDik",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/19",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "students",
+                "19"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteStudent",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2ODU2NzU5LCJleHAiOjE3NzY4NjAzNTl9.rR4KD25Ze4WwJfM6MjQNm6b4EhUw2U8U7D-pfKvOGF8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"studentName\": \"Mahesh\",\r\n  \"email\": \"mahesh@gmail.com\",\r\n  \"password\": \"mahesh123\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/23",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "students",
+                "23"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "pastEvents",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhdGhhcnZhQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NjM0MzEzNywiZXhwIjoxNzc2MzQ2NzM3fQ.1jATdFQG3hAR6SaNFr-FI5aRiLAgiTmWf0wfjCfMJRg",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"student\": {\r\n    \"studentId\": 3\r\n  },\r\n  \"event\": {\r\n    \"eventId\": 3\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/events/past",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events",
+                "past"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "dashboard",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc3NDU0MDc4LCJleHAiOjE3Nzc0NTc2Nzh9.i4T9h8fL_K7HxX0VyluuWULsmQZ62VGXhiF7pZl6cO8",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/dashboard",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "dashboard"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change-password",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb2hpdEBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Nzc1MzAyNzQsImV4cCI6MTc3NzUzMzg3NH0.OroM5oRnjP8CgA51NfivmQGr5EjFxSQImkR_ZxBstjk",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"oldPassword\": \"rohit123\",\r\n  \"newPassword\": \"1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/admin/change-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "admin",
+                "change-password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Student",
+      "item": [
+        {
+          "name": "registerForEvent",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhlc2hAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NzcyOTIzMDQsImV4cCI6MTc3NzI5NTkwNH0.ynB37xtDlho7rwb0K5iAIHg0KOJ-OBCIeX0461KhDlY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"studentId\": 12,\r\n  \"eventId\": 13\r\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/registrations/registerForEvent",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "registrations",
+                "registerForEvent"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllEvents",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWV5QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzc2NzY0NDcwLCJleHAiOjE3NzY3NjgwNzB9.wXekzxmTjVBp-tf8tasdNfM67VIDOaqIPF8XJbgpYd0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"student\": {\r\n    \"studentId\": 3\r\n  },\r\n  \"event\": {\r\n    \"eventId\": 3\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWV5QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzc2NzY0NDcwLCJleHAiOjE3NzY3NjgwNzB9.wXekzxmTjVBp-tf8tasdNfM67VIDOaqIPF8XJbgpYd0",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/registrations/pay/16",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "registrations",
+                "pay",
+                "16"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "makePayment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWpheUBleGFtcGxlLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzc3Mzc5MzI0LCJleHAiOjE3NzczODI5MjR9.LoniPOTw3anHshcEmPc2uLwWFlrO_svZSvCXdjTfQhU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"mahesh@gmail.com\",\r\n  \"password\": \"mahesh123\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/payment/pay/23",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "payment",
+                "pay",
+                "23"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "recommendations",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhlc2hAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3Nzc0NjE2NzksImV4cCI6MTc3NzQ2NTI3OX0.kZQuSOxkrWEcLLTJYifSRfd8LAdxbncRJZlJj00_oTg",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/events/recommendations",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events",
+                "recommendations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-password",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbW9sQGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzc3NDY2MTQ1LCJleHAiOjE3Nzc0Njk3NDV9.95xnDoblp76lCBuBAUxf9HzfSrs3vfTX12BLgjyf2PI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"oldPassword\": \"amol123\",\r\n  \"newPassword\": \"amol321\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/update-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "students",
+                "update-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "forgot-password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"om@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/forgot-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "students",
+                "forgot-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset-password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvbUBnbWFpbC5jb20iLCJyb2xlIjoiU1RVREVOVCIsImlhdCI6MTc3NzQ2NjQ5OCwiZXhwIjoxNzc3NDcwMDk4fQ.bebnoILrrVBy2We0N_nvepN1IVuP9Eg99i_wWr4dD2g",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"om@gmail.com\",\r\n  \"otp\": \"898828\",\r\n  \"newPassword\": \"omi1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/reset-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "students",
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "public",
+      "item": [
+        {
+          "name": "adminLogin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"emailId\": \"rohit@gmail.com\",\r\n  \"password\": \"rohit123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/admin/loginAdmin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "admin",
+                "loginAdmin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "studentLogin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"om@gmail.com\",\r\n  \"password\": \"om123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "students",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "saveStudent",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"studentName\": \"Sakshi\",\r\n  \"email\": \"sakshi@gmail\",\r\n  \"password\": \"amol123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/add",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "students",
+                "add"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "searchEvent",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/events/search?name=cricket",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "cricket"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "upcomingEvent",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/events/upcoming",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events",
+                "upcoming"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getEventByCategory",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"student\": {\r\n    \"studentId\": 3\r\n  },\r\n  \"event\": {\r\n    \"eventId\": 3\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/events/category/tech",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "events",
+                "category",
+                "tech"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "admin-forgot-password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"emailId\": \"aditya@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/admin/admin-forgot-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "admin",
+                "admin-forgot-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "admin-reset-password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"emailId\": \"aditya@gmail.com\",\r\n    \"otp\": \"223867\",\r\n    \"newPassword\": \"aditya123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/admin/admin-reset-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "admin",
+                "admin-reset-password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
