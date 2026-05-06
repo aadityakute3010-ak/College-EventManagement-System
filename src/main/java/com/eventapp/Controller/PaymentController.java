@@ -9,7 +9,6 @@ import com.eventapp.Service.PaymentService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {

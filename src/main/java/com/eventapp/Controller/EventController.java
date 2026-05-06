@@ -11,6 +11,7 @@ import com.eventapp.dto.EventResponseDTO;
 import com.eventapp.model.Event;
 import jakarta.validation.Valid;
 
+
 @RestController
 @RequestMapping("/events")
 public class EventController {

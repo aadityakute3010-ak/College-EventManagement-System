@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-
 import com.eventapp.Service.RegistrationService;
 import com.eventapp.dto.ApproveRegistrationRequestDTO;
 import com.eventapp.dto.RegistrationRequestDTO;
 import com.eventapp.dto.RegistrationResponseDTO;
 import com.eventapp.model.Registration;
-
+import com.itextpdf.io.exceptions.IOException;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 
 @RestController
@@ -54,4 +54,9 @@ public class RegistrationController {
                 .body(pdf);
     }
     
+    @GetMapping("/export")
+    public void exportApprovedRegistrations(HttpServletResponse response) throws IOException, java.io.IOException {
+        registrationService.exportApprovedRegistrationsExcel(response);
+    } 
+     
 }

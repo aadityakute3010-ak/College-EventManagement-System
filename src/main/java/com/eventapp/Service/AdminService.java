@@ -56,7 +56,7 @@ public class AdminService {
 		saveAdmin.setEmailId(admin.getEmailId());
 		saveAdmin.setPassword(admin.getPassword());
 		saveAdmin.setRole("ADMIN");
-		adminRepo.save(saveAdmin);
+		adminRepo.save(saveAdmin); 
 	}
 
 	public void deleteAdmin(long adminId) {

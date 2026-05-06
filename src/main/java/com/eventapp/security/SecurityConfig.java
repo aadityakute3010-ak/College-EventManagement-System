@@ -25,6 +25,7 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 		http.csrf(csrf -> csrf.disable())
+		.cors(cors -> {})
 
 				.exceptionHandling(ex -> ex.authenticationEntryPoint(customAuthEntryPoint)
 						.accessDeniedHandler(accessDeniedHandler))
@@ -32,11 +33,9 @@ public class SecurityConfig {
 				.authorizeHttpRequests(auth -> auth
 
 						//PUBLIC APIs
-						.requestMatchers("/admin/loginAdmin", "/students/login", "/students/add", "/events/search", "/events/upcoming","/events/past","/events/category/*","/students/forgot-password","/students/reset-password","/admin/admin-forgot-password","/admin/admin-reset-password").permitAll()
+						.requestMatchers("/admin/loginAdmin", "/students/login", "/students/add", "/events",  "/events/search", "/events/upcoming","/events/past","/events/category/*","/students/forgot-password","/students/reset-password","/admin/admin-forgot-password","/admin/admin-reset-password").permitAll()
 
 						//STUDENT + ADMIN (VIEW EVENTS)
-						.requestMatchers(HttpMethod.GET, "/events").hasAnyAuthority("ADMIN", "STUDENT")
-
 						.requestMatchers(HttpMethod.GET, "/events/*").hasAnyAuthority("ADMIN", "STUDENT")
 						
 						.requestMatchers("/dashboard").hasAnyAuthority("ADMIN", "STUDENT")
@@ -54,6 +53,8 @@ public class SecurityConfig {
 
 						// Admin APIs
 						.requestMatchers("/admin/**").hasAuthority("ADMIN")
+						.requestMatchers("/registrations/export")
+						.hasAuthority("ADMIN")
 						
 						.requestMatchers(HttpMethod.PUT, "/admin/change-password")
 						.hasAuthority("ADMIN")
@@ -63,7 +64,6 @@ public class SecurityConfig {
 						.hasAuthority("ADMIN")
 
 						// Event management
-						.requestMatchers(HttpMethod.POST, "/events").hasAuthority("ADMIN")
 
 						.requestMatchers(HttpMethod.DELETE, "/events/*").hasAuthority("ADMIN")
 

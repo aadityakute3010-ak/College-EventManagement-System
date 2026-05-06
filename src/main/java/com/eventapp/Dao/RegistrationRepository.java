@@ -43,5 +43,8 @@ public interface RegistrationRepository extends JpaRepository<Registration, Long
 	List<EventDashBoardResponseDTO> findStudentEvents(@Param("student") Student student);
 	
 	List<Registration> findByStudentStudentId(long studentId);
+	
+	@Query("SELECT r FROM Registration r")
+	List<Registration> findAllRegistrations();
 
 }

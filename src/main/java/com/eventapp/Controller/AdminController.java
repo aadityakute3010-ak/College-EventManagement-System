@@ -32,7 +32,7 @@ public class AdminController {
     }
 
   
-    @DeleteMapping("deletAdmin/{adminId}") 
+    @DeleteMapping("deleteAdmin/{adminId}") 
     public String deleteAdmin(@PathVariable long adminId) {
         adminService.deleteAdmin(adminId);
         return "Admin deleted successfully";

@@ -48,6 +48,11 @@ public class Event {
 	@Enumerated(EnumType.STRING) 
 	private EventCategory category;
 	
+	private String venue;
+
+	@Column(length = 500)
+	private String locationLink;
+	
 
 	public Event() {
 		super();
@@ -76,32 +81,32 @@ public class Event {
 		return eventId;
 	}
 
-	public void setEventId(Integer event_id) {
-		this.eventId = event_id;  
+	public void setEventId(Integer eventId) {
+		this.eventId = eventId;  
 	}
 
 	public String getEventName() {
 		return eventName;
 	}
 
-	public void setEventName(String event_Name) {             
-		this.eventName = event_Name; 
+	public void setEventName(String eventName) {             
+		this.eventName = eventName; 
 	}
 
 	public String getEventDesc() {
 		return eventDesc;
 	}
 
-	public void setEventDesc(String event_Desc) {
-		this.eventDesc = event_Desc;
+	public void setEventDesc(String eventDesc) {
+		this.eventDesc = eventDesc; 
 	}
 
 	public LocalDate getEventDate() {
 		return eventDate;
 	}
 
-	public void setEventDate(LocalDate event_Date) {
-		this.eventDate = event_Date;
+	public void setEventDate(LocalDate eventDate) {
+		this.eventDate = eventDate; 
 	}
  
 
@@ -111,8 +116,8 @@ public class Event {
 	}
 
 
-	public void setOrganizerName(String organizer_Name) {
-		this.organizerName = organizer_Name;
+	public void setOrganizerName(String organizerName) {
+		this.organizerName = organizerName;
 	}
 
 	public List<Registration> getRegistrations() {
@@ -155,8 +160,21 @@ public class Event {
 		this.category = category;
 	}
 	
-	
-	
+	public String getVenue() {
+	    return venue;
+	}
+
+	public void setVenue(String venue) {
+	    this.venue = venue;
+	}
+
+	public String getLocationLink() {
+	    return locationLink;
+	}
+
+	public void setLocationLink(String locationLink) {
+	    this.locationLink = locationLink;
+	}
 	
 	
 }

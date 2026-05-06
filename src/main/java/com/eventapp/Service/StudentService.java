@@ -43,8 +43,9 @@ public class StudentService {
 		Student saveStudent = new Student();
 		saveStudent.setStudentName(student.getStudentName());
 		saveStudent.setEmail(student.getEmail());
-		student.setPassword(passwordEncoder.encode(student.getPassword())); 
-		saveStudent.setRole("STUDENT");
+		saveStudent.setPassword(passwordEncoder.encode(student.getPassword())); 
+		saveStudent.setRole("STUDENT"); 
+		studentRepo.save(saveStudent);
 
 		AddStudentResponseDTO studentReponse = new AddStudentResponseDTO(saveStudent.getStudentId(),
 				saveStudent.getStudentName(), saveStudent.getEmail(), "Student signed up successfully");

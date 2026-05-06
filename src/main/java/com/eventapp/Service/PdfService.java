@@ -13,6 +13,8 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.TextAlignment;
+import com.itextpdf.kernel.pdf.action.PdfAction;
+import com.itextpdf.layout.element.Link;
 
 @Service
 public class PdfService {
@@ -83,6 +85,21 @@ public class PdfService {
 
             eventTable.addCell("Event Date");
             eventTable.addCell(reg.getEvent().getEventDate().toString());
+
+            eventTable.addCell("Venue");
+            eventTable.addCell(reg.getEvent().getVenue());
+
+            eventTable.addCell("Location");
+
+            Link link = new Link(
+                    "View Map",
+                    PdfAction.createURI(reg.getEvent().getLocationLink())
+            );
+
+            Paragraph linkParagraph = new Paragraph(link)
+                    .setFontColor(ColorConstants.BLUE);
+
+            eventTable.addCell(linkParagraph);
 
             document.add(eventTable);
             document.add(new Paragraph("\n"));

@@ -105,8 +105,10 @@ public class PaymentService {
                 event.getEventName(),
                 event.getEventDate().toString(),
                 event.getRegistrationFees(),
-                pdf
-        );
+                pdf,
+                event.getVenue(),
+                event.getLocationLink()
+        ); 
         
         return pdf;
     }

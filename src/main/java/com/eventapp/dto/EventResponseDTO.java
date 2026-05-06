@@ -6,21 +6,23 @@ import com.eventapp.model.EventCategory;
 
 public class EventResponseDTO {
 
-    private Integer eventId;
-    private String eventName;
-    private LocalDate eventDate;
-    private String message;
-    private EventCategory category;
- 
+	private Integer eventId;
+	private String eventName;
+	private LocalDate eventDate;
+	private String message;
+	private EventCategory category;
+	private String venue;
+	private String locationLink;
 
 	public EventResponseDTO(Integer eventId, String eventName, LocalDate eventDate, String message,
-			EventCategory category) {
-		super();
+			EventCategory category, String venue, String locationLink) {
 		this.eventId = eventId;
 		this.eventName = eventName;
 		this.eventDate = eventDate;
 		this.message = message;
 		this.category = category;
+		this.venue = venue;
+		this.locationLink = locationLink;
 	}
 
 	public Integer getEventId() {
@@ -63,6 +65,22 @@ public class EventResponseDTO {
 		this.category = category;
 	}
 
-    
-    
+	public String getVenue() {
+		return venue;
+	}
+
+	public void setVenue(String venue) {
+		this.venue = venue;
+	}
+
+	public String getLocationLink() {
+		return locationLink;
+	}
+
+	public void setLocationLink(String locationLink) {
+		this.locationLink = locationLink;
+	}
+	
+	
+
 }

@@ -33,6 +33,12 @@ public class EventRequestDTO {
 	
 	@NotNull(message = "Category is required")
 	private EventCategory category;
+	
+	@NotBlank
+	private String venue;
+
+	@NotBlank
+	private String locationLink;
     
     
 	public String getEventName() {
@@ -77,6 +83,20 @@ public class EventRequestDTO {
 	public void setCategory(EventCategory category) {
 		this.category = category;
 	}
+	public String getVenue() {
+		return venue;
+	}
+	public void setVenue(String venue) {
+		this.venue = venue;
+	}
+	public String getLocationLink() {
+		return locationLink;
+	}
+	public void setLocationLink(String locationLink) {
+		this.locationLink = locationLink;
+	}
+	
+	
 
     
 }

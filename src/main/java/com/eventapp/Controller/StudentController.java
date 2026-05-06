@@ -14,8 +14,8 @@ import com.eventapp.dto.StudentLoginDTO;
 import com.eventapp.dto.UpdateEmailDTO;
 import com.eventapp.dto.UpdatePasswordDTO;
 import com.eventapp.model.Student;
-
 import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping("/students")
